@@ -1,0 +1,8 @@
+number_of_student = int(input("Please enter the number of students: "))
+studentList = []
+x = 0
+while x < number_of_student:
+  studentName = input(f"Please Enter the {x+1} Student Name: ")
+  studentList.append(studentName)
+  x = x + 1
+print(studentList)
