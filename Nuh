@@ -54,7 +54,7 @@ while flag:
 
     print("Exit")
 
-    # break
+    break
 
     flag = False
 
