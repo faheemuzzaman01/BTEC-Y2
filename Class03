@@ -1,0 +1,106 @@
+# # The Global Variables
+# table_customers = 0
+# list_items = [[1,"Pizza,       ",14], [2,"Burger,      ",10], [3,"Fish,        ",20]]
+# user_name = ""
+
+# # Display Menus function
+# def display_menu(list_items):
+#     for items in list_items:
+#         print(f"Item: {items[0]} => {items[1]} £{items[2]}")
+
+# # Display Welcome function
+# def welcome_function():
+#     print(""" ######## Welcome To East Berkshire Cooking Company ########          
+#     """)
+
+# # Get User Name function    
+# def get_user_name():
+#     global user_name
+#     user_name = input("Enter the User Name: ")
+
+# def table_customer():    
+#     get_customer = int(input("How many customer you have: "))
+#     if get_customer == 3 or get_customer == 5:
+#        global table_customer
+#        table_customer = get_customer
+#     else:               
+#         table_customer = -1
+
+# def get_menu_for_customer(table_customers):
+#     for i in range(table_customers): 
+#         display_menu(list_items)              
+#         customer_value_selection = int(input(f"Customer: {i+1} => Menu Selection "))
+
+
+# def main_function():     
+#     welcome_function()
+#     get_user_name()
+#     table_customer()    
+#     if table_customer == -1:        
+#         print("Invalid Selection of Customer number ")
+#     else:                
+#         get_menu_for_customer(table_customer)
+
+
+# flag = True
+# while flag:
+#     print("""
+#     Enter the Program: press 1
+#     Exit: press 0             
+#     """)
+#     menu_item = int(input("Enter the Menu Number: "))  
+#     if menu_item == 1:
+#         main_function()
+#     elif menu_item == 0:
+#         print("The program is End")
+#         break         
+#     else :
+#         print("Invalid Selection")  
+
+
+
+flag = True
+studentList = ["Fahim", "John", "Naeem", "Zak", "Zaman"]
+
+def welcome_fucntion():
+    print("""***** Welcome to NCG College *****
+    Add Students: press 1
+    Show Students: press 2
+    Delete Students: press 3
+    Exit: press 0""")
+
+def add_student(studentList):
+    number_of_student = int(input("Please enter the number of students: "))
+    x = 0
+    while x < number_of_student:
+        studentName = input(f"Please Enter the {x+1} Student Name: ")
+        studentList.append(studentName)
+        x = x + 1
+
+def print_students(studentList):
+    for student in studentList:
+      print(student)
+
+def delete_student(studentList):
+    count = 1
+    for student in studentList:
+      print(f"{count} => {student}")
+      count = count + 1
+    studentIndex = int(input("Please enter the student index to delete: "))
+    studentList.pop(studentIndex - 1)
+
+while flag:
+  welcome_fucntion()
+  menu_item = int(input("Enter the menu item: "))h
+  if menu_item == 1:
+    add_student(studentList)
+  elif menu_item == 2:
+    print_students(studentList)
+  elif menu_item == 3:
+    delete_student(studentList)    
+  elif menu_item == 0:
+    print("Exit")
+    # break
+    flag = False
+  else:
+    print("Invalid menu item")
