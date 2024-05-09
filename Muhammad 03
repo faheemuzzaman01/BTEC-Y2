@@ -1,0 +1,47 @@
+flag = True
+
+
+def welcome_function():
+  print("""***** Welcome to NCG College *****
+  Add Students: press 1
+  Show Students: press 2
+  Delete Students: press 3
+  Exit: press 0""")
+
+
+def add_student(studentList):
+  number_of_student = int(input("Please enter the number of students: "))
+  x = 0
+  while x < number_of_student:
+    student_name = input(f"Please enter the {x+1} student name: ")
+    studentList.append(student_name)
+    x = x + 1
+
+
+def print_students(studentList):
+  for student in studentList:
+    print(student)
+
+
+def delete_student(studentList):
+  count = 1
+  for student in studentList:
+    print(f"{count} => {student}")
+    count = count + 1
+    studetnIndex = int(input("Please enter the student index to delete: "))
+    studentList.pop(studentIndex - 1)
+
+
+while flag:
+  welcome_function()
+  menu_item = int(input("Enter the menu item"))
+  if menu_item == 1:
+    add_student(studentList)
+  elif menu_item == 3:
+    delete_student(studentList)
+  elif menu_item == 0:
+    print("Exit")
+    # break
+    flag = False
+else:
+  print("Invalid menu item")
